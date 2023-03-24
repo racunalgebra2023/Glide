@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity( ) {
 
         binding.bGenerate.setOnClickListener {
             val url = photoProvider.generateRandomPictureUrl()
-            Glide.with(this)
-                .load(url)
-                .centerCrop()
-                .timeout(1000000000)
+            Glide.with(this )
+                .load( url )
+                .centerCrop( )
+                .timeout(1000000000 )
                 .placeholder( R.drawable.ic_image_place_holder )
                 .error( R.drawable.ic_broken_image )
                 .fallback( R.drawable.ic_no_image )
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity( ) {
                 .placeholder( R.drawable.ic_image_place_holder )
                 .error( R.drawable.ic_broken_image )
                 .skipMemoryCache(true)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .diskCacheStrategy( DiskCacheStrategy.NONE )
                 .transform(CircleCrop())
                 .into( binding.imageView )
         }
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity( ) {
                 .load(url)
                 .override(500, 500)
                 .transform(
-                    CenterCrop(),
+                    CenterCrop( ),
                     BlurTransformation(5),
                     ContrastFilterTransformation(2.0f),
                     VignetteFilterTransformation(
@@ -63,8 +63,8 @@ class MainActivity : AppCompatActivity( ) {
                         0f,
                         0.4f)
                 )
-                .diskCacheStrategy(DiskCacheStrategy.DATA)
-                .placeholder(R.drawable.ic_image_place_holder )
+                .diskCacheStrategy( DiskCacheStrategy.DATA )
+                .placeholder( R.drawable.ic_image_place_holder )
                 .into( binding.imageView )
         }
     }
